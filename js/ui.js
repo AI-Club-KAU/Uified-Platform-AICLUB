@@ -72,7 +72,7 @@
     view.className = 'view';
     view.innerHTML = html;
     main.replaceChildren(view);
-    document.title = (title ? title + ' · ' : '') + A.config.appName;
+    document.title = A.config.appName; // the tab always shows the platform name only
     if (!(opts && opts.keepScroll)) window.scrollTo(0, 0);
     if (!(opts && opts.noFocus)) {
       const h = view.querySelector('h1');

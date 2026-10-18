@@ -6,7 +6,7 @@
 window.AIClub = window.AIClub || {};
 
 window.AIClub.config = {
-  appName: 'منصة النادي الموحدة',
+  appName: 'المنصة الموحدة لنادي الذكاء الاصطناعي', // shown in the browser tab
   clubName: 'نادي الذكاء الاصطناعي',
 
   /*
