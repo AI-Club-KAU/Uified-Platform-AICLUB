@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0e0d12">
+  <meta name="robots" content="noindex, nofollow">
+  <title>منصة النادي الموحدة · نادي الذكاء الاصطناعي</title>
+  <link rel="icon" type="image/png" href="assets/brand/ai-club-mark-gradient.png">
+  <!-- Same font as the members and leaders portals -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/views.css">
+</head>
+<body class="is-loading">
+  <button type="button" class="skip-link" id="skipLink">تخطَّ إلى المحتوى</button>
+
+  <div class="app-shell">
+    <header class="topbar" id="topbar">
+      <div class="container topbar__inner">
+        <a class="brand" href="#/" aria-label="منصة النادي الموحدة — الرئيسية">
+          <img class="brand__mark" src="assets/brand/ai-club-mark-white.png" alt="" width="36" height="36">
+          <span class="brand__text">
+            <span class="brand__name" dir="ltr"><span class="brand__ai">AI</span>Club</span>
+            <span class="brand__sub">منصة النادي الموحدة</span>
+          </span>
+        </a>
+        <div class="topbar__actions" id="topbarActions"></div>
+      </div>
+    </header>
+
+    <nav class="desktop-nav" id="desktopNav" aria-label="التنقل الرئيسي"></nav>
+
+    <main id="main" class="container main" tabindex="-1"></main>
+
+    <footer class="container site-footer" id="siteFooter"></footer>
+  </div>
+
+  <nav class="bottom-nav" id="bottomNav" aria-label="التنقل الرئيسي (الجوال)"></nav>
+
+  <div id="overlayRoot"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <p class="noscript">تحتاج المنصة إلى تفعيل JavaScript في المتصفح.</p>
+  </noscript>
+
+  <!-- Configuration (no UI code) -->
+  <script src="js/config.js"></script>
+  <!-- Core -->
+  <script src="js/utils.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/data-adapter.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/ui.js"></script>
+  <!-- Views -->
+  <script src="js/views/login.js"></script>
+  <script src="js/views/home.js"></script>
+  <script src="js/views/departments.js"></script>
+  <script src="js/views/collections.js"></script>
+  <script src="js/views/search.js"></script>
+  <script src="js/views/resource.js"></script>
+  <script src="js/views/status.js"></script>
+  <!-- Boot -->
+  <script src="js/app.js"></script>
+</body>
+</html>

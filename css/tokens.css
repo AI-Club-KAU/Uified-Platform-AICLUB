@@ -1,0 +1,90 @@
+/*
+ * Design tokens — منصة النادي الموحدة
+ * Brand colours come from the club identity guide (دليل الهوية AI):
+ *   purple #7e36e3 · green #54d640 · white #ffffff
+ * Dark neutrals approximate the v3.5 design screenshots.
+ */
+
+/*
+ * Typography: Readex Pro (Google Fonts, loaded in index.html), the same font as
+ * the members and leaders portals. It covers Arabic and Latin.
+ */
+
+:root {
+  /* Brand */
+  --brand-purple: #7e36e3;
+  --brand-green: #54d640;
+  --brand-white: #ffffff;
+
+  /* Derived purple / green */
+  --purple-hover: #8d47f0;
+  --purple-press: #6c2bc9;
+  --purple-tint: #c9a8ff;
+  --purple-soft: rgba(126, 54, 227, 0.16);
+  --purple-softer: rgba(126, 54, 227, 0.09);
+  --purple-line: rgba(126, 54, 227, 0.55);
+  --green-soft: rgba(84, 214, 64, 0.14);
+
+  /* Neutrals (dark UI) */
+  --bg: #0e0d12;
+  --bg-raised: #131218;
+  --surface: #1a1920;
+  --surface-2: #211f29;
+  --surface-hover: #23212c;
+  --border: #2c2a35;
+  --border-strong: #3b3747;
+  --text: #f5f3f9;
+  --text-muted: #aaa5b7;
+  --text-faint: #7f7a8c;
+
+  /* Feedback */
+  --danger: #ff7a7a;
+  --danger-soft: rgba(255, 122, 122, 0.12);
+  --warning: #f2c94c;
+  --warning-soft: rgba(242, 201, 76, 0.1);
+
+  /* Type */
+  --font-ar: "Readex Pro", Tahoma, sans-serif;
+  --font-latin: "Readex Pro", Tahoma, sans-serif;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.8125rem;
+  --fs-base: 0.9375rem;
+  --fs-md: 1.0625rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 1.875rem;
+
+  /* Spacing */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+
+  /* Shape */
+  --radius-xs: 8px;
+  --radius-sm: 10px;
+  --radius: 14px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+
+  /* Layout */
+  --container: 1040px;
+  --gutter: 16px;
+  --topbar-h: 68px;
+  --bottom-nav-h: 64px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur: 180ms;
+
+  --focus-ring: 0 0 0 3px rgba(84, 214, 64, 0.55);
+  --shadow-sheet: 0 -18px 50px rgba(0, 0, 0, 0.55);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur: 0ms; }
+}
