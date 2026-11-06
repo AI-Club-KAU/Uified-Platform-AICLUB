@@ -213,7 +213,7 @@
             '<label class="field__label" for="fbText">ملاحظتك على «' + esc(r.title) + '»</label>' +
             '<textarea class="input textarea" id="fbText" rows="5" maxlength="' + FEEDBACK_MAX + '" data-autofocus ' +
               'aria-describedby="fbHint fbError"></textarea>' +
-            '<p class="field__hint" id="fbHint">يصل اسمك مع الملاحظة إلى قائد القسم وقسم الدعم والتطوير.</p>' +
+            '<p class="field__hint" id="fbHint">يصل اسمك مع الملاحظة إلى قسم الدعم والتطوير.</p>' +
             '<p class="field__error" id="fbError" aria-live="polite" hidden></p>' +
           '</div>' +
           '<button type="submit" class="btn btn--primary btn--block">إرسال</button>' +
