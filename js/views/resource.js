@@ -103,7 +103,13 @@
           note: g.isForm ? 'للنسخ والتعديل فقط، لا ترسل ردودك هنا.' : ''
         };
       }
-      return { bar: [btn('btn--primary', 'external', r.section === 'system' ? 'فتح النظام' : g ? 'فتح في نافذة جديدة' : 'فتح الرابط', linkAttrs(g ? g.open : r.url))] };
+      const isSystem = r.section === 'system';
+      const bar = [btn('btn--primary', 'external', isSystem ? 'فتح النظام' : g ? 'فتح في نافذة جديدة' : 'فتح الرابط', linkAttrs(g ? g.open : r.url))];
+      // Systems and independent external links can be shared or kept, so they also offer their real link
+      if (isSystem || !g) {
+        bar.push('<button type="button" class="btn btn--ghost" data-action="copy-url">' + icon('link') + '<span>' + (isSystem ? 'نسخ رابط النظام' : 'نسخ الرابط') + '</span></button>');
+      }
+      return { bar };
     }
     if (r.action === 'text') {
       if (!r.text) return { block: unavailable('النص غير متوفر حاليًا') };
@@ -304,11 +310,16 @@
     const view = A.ui.mount(html, r.title);
     view.addEventListener('click', async (e) => {
       if (e.target.closest('[data-action="feedback"]')) { openFeedback(r, e.target.closest('[data-action="feedback"]')); return; }
-      const b = e.target.closest('[data-action="copy-link"], [data-action="copy-text"]');
+      const b = e.target.closest('[data-action="copy-link"], [data-action="copy-text"], [data-action="copy-url"]');
       if (!b) return;
-      const isText = b.dataset.action === 'copy-text';
-      const ok = await A.ui.copyText(isText ? r.text : location.href);
-      A.ui.toast(ok ? (isText ? 'تم نسخ النص' : 'تم نسخ رابط المورد') : 'تعذّر النسخ، حاول مرة ثانية');
+      const copies = {
+        'copy-text': [r.text, 'تم نسخ النص'],
+        'copy-url': [r.url, r.section === 'system' ? 'تم نسخ رابط النظام' : 'تم نسخ الرابط'],
+        'copy-link': [location.href, 'تم نسخ رابط صفحة المورد']
+      };
+      const [value, done] = copies[b.dataset.action];
+      const ok = await A.ui.copyText(value);
+      A.ui.toast(ok ? done : 'تعذّر النسخ، حاول مرة ثانية');
     });
   };
 })(window.AIClub);
