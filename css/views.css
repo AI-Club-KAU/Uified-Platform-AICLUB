@@ -114,12 +114,14 @@
 .work-card__thumb {
   display: grid;
   place-items: center;
+  position: relative;
+  overflow: hidden;
   aspect-ratio: 16 / 10;
-  padding: var(--sp-4);
   background: #2b2537;
 }
 .work-card__thumb--light { background: var(--brand-white); }
-.work-card__thumb img { max-height: 100%; object-fit: contain; }
+/* Same-size cards: the image fills the frame from its top; opening the work shows it in full */
+.work-card__thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
 .work-card__thumb--icon {
   color: var(--purple-tint);
   background: radial-gradient(80% 90% at 50% 0%, rgba(126, 54, 227, 0.22) 0%, transparent 70%), #211d2a;
